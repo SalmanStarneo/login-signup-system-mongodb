@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 
 router.get("/home", function (req, res) {
   if (req.session.user) {
-    return res.render("home.html", { name: req.session.user.name });
+    return res.render("home.html", { name: req.session.user.name, gender:req.session.user.gender, civilState:req.session.user.civilState,job:req.session.user.job });
   }
   res.redirect("/");
 });

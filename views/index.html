@@ -15,6 +15,18 @@
     <script>
         $(document).ready(function () {
             $("#username").hide();
+            
+            $("#userDOB").hide();
+            $("#userCOB").hide();
+
+            $("#userGender").hide();
+            $("#civilState").hide();
+            $("#userOccupation").hide();
+
+            $("#favHobby").hide();
+            $("#favOutActivity").hide();
+            $("#monthlySalary").hide();
+
             $('#login-submit').click(function (e) {
                 if ($(this).attr('value') === 'Register') {
                     $.post("/users/signup", {
@@ -26,6 +38,18 @@
                             alert(data.message);
                         } else {
                             $("#username").hide();
+
+                            $("#userDOB").hide();
+                            $("#userCOB").hide();
+                            $("#userGender").hide();
+
+                            $("#civilState").hide();
+                            $("#userOccupation").hide();
+
+                            $("#favHobby").hide();
+                            $("#favOutActivity").hide();
+                            $("#monthlySalary").hide();
+
                             $("#login-submit").prop('value', 'Log in');
                         }
                     });
@@ -44,6 +68,14 @@
             });
             $("#reg").click(function (event) {
                 $("#username").show('slow');
+                $("#userDOB").show('slow');
+                $("#userCOB").show('slow');
+                $("#userGender").show('slow');
+                $("#civilState").show('slow');
+                $("#userOccupation").show('slow');
+                $("#favHobby").show('slow');
+                $("#favOutActivity").show('slow');
+                $("#monthlySalary").show('slow');
                 $("#login-submit").prop('value', 'Register');
                 event.preventDefault();
             });
@@ -64,6 +96,15 @@
     </nav>
     <div class="form-group" style="margin-top: 100px; width : 400px; margin-left : 50px;">
         <input type="text" id="username" placeholder="Name" class="form-control"><br>
+        <input type="date" id="userDOB" placeholder="DOB" class="form-control"><br>
+        <input type="text" id="userCOB" placeholder="Country of origin" class="form-control"><br>
+        <input type="text" id="userGender" placeholder="Gender" class="form-control" maxlength="6"><br>
+        <input type="text" id="civilState" placeholder="civil state" class="form-control"><br>
+        <input type="text" id="userOccupation" placeholder="Occupation" class="form-control"><br>
+        <input type="text" id="favHobby" placeholder="favorite Hobby" class="form-control"><br>
+        <input type="text" id="favOutActivity" placeholder="favorite Sport/Outdoor's activity" class="form-control"><br>
+        <input type="number" id="monthlySalary" placeholder="Salary per month" class="form-control" min="0"><br>
+
         <input type="text" id="useremail" placeholder="Email" class="form-control"><br>
         <input type="password" id="password" placeholder="Password" class="form-control"><br>
         <input type="button" id="login-submit" value="Log In" class="btn btn-primary">&nbsp;<a href="" id="reg">Sign up
